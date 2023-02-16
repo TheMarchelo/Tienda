@@ -18,6 +18,8 @@ import java.io.Serializable;
  * @author Marcelo
  */
 
+/* el signo de " @ " se llama patron decorador y le da atributos a nuestras clases*/
+
  @Entity
  @Table (name="personas")
 public class Persona implements Serializable{
