@@ -30,7 +30,7 @@ public class Persona implements Serializable{
      private String nombre, apellido1,apellido2,telefono,email;
      
      @ManyToOne
-     @JoinColumn (name = "pais_id")
+     @JoinColumn (name = "paises_id")
      private Pais pais;
 
     public long getId() {
