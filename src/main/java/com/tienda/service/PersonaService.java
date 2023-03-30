@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tienda.service;
 
 import com.tienda.entity.Persona;
@@ -9,7 +5,6 @@ import com.tienda.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class PersonaService implements IPersonaService {
@@ -37,4 +32,22 @@ public class PersonaService implements IPersonaService {
         personaRepository.deleteById(id);
     }
 
+    @Autowired
+    PersonaRepository repository;
+
+    public List<Persona> findByApellidos(String apellido1, String apellido2) {
+        return personaRepository.findByApellido1AndApellido2(apellido1, apellido2);
+    }
+
+    @Override
+    public List<Persona> buscarPorApellido(String apellido1, String apellido2) {
+        return personaRepository.findByApellido1AndApellido2(apellido1, apellido2);
+    }
+
+    @Override
+    public Persona findByNombre(String username) {
+        return personaRepository.findByNombre(username);
+    }
+
 }
+

@@ -1,17 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tienda.repository;
 
-import com.tienda.entity.Pais;
 import com.tienda.entity.Persona;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Marcelo
- */
-public interface PersonaRepository extends CrudRepository<Persona,Long>{
+@Repository
+public interface PersonaRepository extends CrudRepository<Persona, Long> {
+
+    List<Persona> findByApellido1(String apellido1);
+
+    List<Persona> findByApellido1AndApellido2(String apellido1, String apellido2);
+    
+    Persona findByNombre (String nombre);
     
 }
